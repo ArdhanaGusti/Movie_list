@@ -11,35 +11,35 @@ abstract class DetailEvent extends Equatable {
 class OnDetailList extends DetailEvent {
   final int id;
 
-  OnDetailList(this.id);
+  const OnDetailList(this.id);
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [id];
 }
 
 class AddWatchlist extends DetailEvent {
   final MovieDetail movieDetail;
 
-  AddWatchlist(this.movieDetail);
+  const AddWatchlist(this.movieDetail);
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [movieDetail];
 }
 
 class EraseWatchlist extends DetailEvent {
   final MovieDetail movieDetail;
 
-  EraseWatchlist(this.movieDetail);
+  const EraseWatchlist(this.movieDetail);
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [movieDetail];
 }
 
 class WatchlistStatus extends DetailEvent {
   final int id;
 
-  WatchlistStatus(this.id);
+  const WatchlistStatus(this.id);
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [id];
 }

@@ -50,9 +50,9 @@ class MovieBlocDetail extends Bloc<DetailEvent, DetailState> {
               ));
             }, (recomen) {
               emit(state.copyWith(
+                movieRecommendations: recomen,
                 movieRecommendationState: RequestState.Loaded,
                 message: '',
-                movieRecommendations: recomen,
               ));
             });
           },
@@ -62,6 +62,7 @@ class MovieBlocDetail extends Bloc<DetailEvent, DetailState> {
     on<AddWatchlist>(
       (event, emit) async {
         final result = await _saveWatchlist.execute(event.movieDetail);
+
         result.fold(
           (failure) {
             emit(state.copyWith(watchlistMessage: failure.message));
@@ -72,6 +73,7 @@ class MovieBlocDetail extends Bloc<DetailEvent, DetailState> {
             ));
           },
         );
+
         add(WatchlistStatus(event.movieDetail.id));
       },
     );

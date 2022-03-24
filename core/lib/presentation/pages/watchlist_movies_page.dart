@@ -35,12 +35,18 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage> {
               );
             } else if (state is WatchlistHasData) {
               final result = state.result;
-              return ListView.builder(
-                itemBuilder: (context, index) {
-                  final movie = result[index];
-                  return MovieCard(movie);
+              return RefreshIndicator(
+                onRefresh: () async {
+                  context.read<MovieBlocWatchList>().add(WatchlistMovie());
                 },
-                itemCount: result.length,
+                child: ListView.builder(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    final movie = result[index];
+                    return MovieCard(movie);
+                  },
+                  itemCount: result.length,
+                ),
               );
             } else if (state is WatchlistError) {
               final result = state.message;

@@ -1,4 +1,3 @@
-import 'package:core/domain/usecases/get_popular_movies.dart';
 import 'package:core/domain/usecases/get_top_rated_movies.dart';
 import 'package:core/presentation/bloc_movie/movie_event.dart';
 import 'package:core/presentation/bloc_movie/movie_state.dart';
