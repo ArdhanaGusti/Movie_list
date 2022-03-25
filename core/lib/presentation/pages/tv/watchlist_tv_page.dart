@@ -1,11 +1,8 @@
 import 'package:core/presentation/bloc_tv/tv_watchlist/tv_watchlist_bloc.dart';
 import 'package:core/presentation/bloc_tv/tv_watchlist/watchlist_event.dart';
-import 'package:core/utils/state_enum.dart';
-import 'package:core/presentation/provider_tv/watchlist_tv_notifier.dart';
 import 'package:core/presentation/widgets/tv_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:provider/provider.dart';
 
 import '../../bloc_tv/tv_watchlist/watchlist_state.dart';
 
@@ -54,6 +51,8 @@ class _WatchlistTvPageState extends State<WatchlistTvPage> {
             } else if (state is WatchlistError) {
               final result = state.message;
               return Text(result);
+            } else if (state is WatchlistEmpty) {
+              return const Center(child: Text("Tidak ada watchlist"));
             } else {
               return const Text('Failed');
             }

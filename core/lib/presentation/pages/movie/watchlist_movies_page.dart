@@ -50,6 +50,8 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage> {
             } else if (state is WatchlistError) {
               final result = state.message;
               return Text(result);
+            } else if (state is WatchlistEmpty) {
+              return const Center(child: Text("Tidak ada watchlist"));
             } else {
               return const Text('Failed');
             }
