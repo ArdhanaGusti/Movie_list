@@ -2,17 +2,17 @@ library core;
 
 export 'styles/colors.dart';
 export 'styles/text_styles.dart';
-export 'presentation/pages/movie_detail_page.dart';
-export 'presentation/pages/home_movie_page.dart';
-export 'presentation/pages/popular_movies_page.dart';
-export 'presentation/pages/popular_tv_pages.dart';
+export 'presentation/pages/movie/movie_detail_page.dart';
+export 'presentation/pages/movie/home_movie_page.dart';
+export 'presentation/pages/movie/popular_movies_page.dart';
+export 'presentation/pages/tv/popular_tv_pages.dart';
 
-export 'presentation/pages/top_rated_movies_page.dart';
-export 'presentation/pages/top_rated_tv_pages.dart';
-export "presentation/pages/tv_series_detail_page.dart";
-export 'presentation/pages/tv_series_page.dart';
-export 'presentation/pages/watchlist_movies_page.dart';
-export 'presentation/pages/watchlist_tv_page.dart';
+export 'presentation/pages/movie/top_rated_movies_page.dart';
+export 'presentation/pages/tv/top_rated_tv_pages.dart';
+export "presentation/pages/tv/tv_series_detail_page.dart";
+export 'presentation/pages/tv/tv_series_page.dart';
+export 'presentation/pages/movie/watchlist_movies_page.dart';
+export 'presentation/pages/tv/watchlist_tv_page.dart';
 export 'presentation/provider/movie_detail_notifier.dart';
 export 'presentation/provider/movie_list_notifier.dart';
 

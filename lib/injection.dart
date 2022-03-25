@@ -1,10 +1,15 @@
 // ignore_for_file: import_of_legacy_library_into_null_safe
 
+import 'package:core/presentation/bloc_movie/movie_detail/movie_detail_bloc.dart';
 import 'package:core/presentation/bloc_movie/movie_list_bloc.dart';
 import 'package:core/presentation/bloc_movie/movie_popular_bloc.dart';
 import 'package:core/presentation/bloc_movie/movie_top_rated_bloc.dart';
-import 'package:core/presentation/bloc_movie/movie_detail_bloc.dart';
-import 'package:core/presentation/bloc_movie/movie_watchlist_bloc.dart';
+import 'package:core/presentation/bloc_movie/movie_watchlist/movie_watchlist_bloc.dart';
+import 'package:core/presentation/bloc_tv/tv_detail/tv_detail_bloc.dart';
+import 'package:core/presentation/bloc_tv/tv_list_bloc.dart';
+import 'package:core/presentation/bloc_tv/tv_popular_bloc.dart';
+import 'package:core/presentation/bloc_tv/tv_top_rated_bloc.dart';
+import 'package:core/presentation/bloc_tv/tv_watchlist/tv_watchlist_bloc.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:core/core.dart';
 import 'package:search/search.dart';
@@ -112,12 +117,27 @@ void init() {
     ),
   );
   locator.registerFactory(
+    () => TvBlocList(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
     () => MovieBlocPopular(
       locator(),
     ),
   );
   locator.registerFactory(
     () => MovieBlocTopRated(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => TvBlocPopular(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => TvBlocTopRated(
       locator(),
     ),
   );
@@ -131,7 +151,21 @@ void init() {
     ),
   );
   locator.registerFactory(
+    () => TvBlocDetail(
+      locator(),
+      locator(),
+      locator(),
+      locator(),
+      locator(),
+    ),
+  );
+  locator.registerFactory(
     () => MovieBlocWatchList(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => TvBlocWatchList(
       locator(),
     ),
   );

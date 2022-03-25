@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "608001009203",
+    "project_id": "movie-list-54c4f",
+    "storage_bucket": "movie-list-54c4f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608001009203:android:97a8ba41707aaac4dba546",
+        "android_client_info": {
+          "package_name": "com.ardhana.movielist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608001009203-b95ul8vrflgs101ig5sgj2bmkvk2o0ha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4-KocdX6JcCHx5bi0oq7xvy3CZOP58mk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608001009203-b95ul8vrflgs101ig5sgj2bmkvk2o0ha.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

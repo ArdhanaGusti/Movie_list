@@ -24,6 +24,7 @@ dependencies:
   sqflite: ^2.0.0+3
   path_provider: ^2.0.2
   flutter_bloc:
+  firebase_crashlytics: ^2.5.3
   about:
     path: ../about
   search:

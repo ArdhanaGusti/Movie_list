@@ -1,5 +1,5 @@
-import 'package:core/presentation/pages/tv_series_page.dart';
-import 'package:core/presentation/pages/watchlist_movies_page.dart';
+import 'package:core/presentation/pages/tv/tv_series_page.dart';
+import 'package:core/presentation/pages/movie/watchlist_movies_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatefulWidget {

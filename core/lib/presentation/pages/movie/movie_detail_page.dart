@@ -1,14 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:core/presentation/bloc_movie/detail_event.dart';
-import 'package:core/presentation/bloc_movie/detail_state.dart';
-import 'package:core/presentation/bloc_movie/movie_detail_bloc.dart';
-import 'package:core/presentation/bloc_movie/movie_watchlist_bloc.dart';
-import 'package:core/presentation/bloc_movie/watchlist_event.dart';
+import 'package:core/presentation/bloc_movie/movie_detail/detail_event.dart';
+import 'package:core/presentation/bloc_movie/movie_detail/detail_state.dart';
+import 'package:core/presentation/bloc_movie/movie_detail/movie_detail_bloc.dart';
 import 'package:core/styles/colors.dart';
 import 'package:core/domain/entities/genre.dart';
 import 'package:core/domain/entities/movie.dart';
 import 'package:core/domain/entities/movie_detail.dart';
-import 'package:core/presentation/provider/movie_detail_notifier.dart';
 import 'package:core/styles/text_styles.dart';
 import 'package:core/utils/state_enum.dart';
 import 'package:flutter/material.dart';

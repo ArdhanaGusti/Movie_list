@@ -6,11 +6,12 @@ import 'package:core/presentation/bloc_movie/movie_state.dart';
 import 'package:core/presentation/bloc_movie/movie_top_rated_bloc.dart';
 import 'package:core/styles/text_styles.dart';
 import 'package:core/domain/entities/movie.dart';
-import 'package:core/presentation/pages/movie_detail_page.dart';
-import 'package:core/presentation/pages/popular_movies_page.dart';
+import 'package:core/presentation/pages/movie/movie_detail_page.dart';
+import 'package:core/presentation/pages/movie/popular_movies_page.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:search/presentation/pages/search_page_movie.dart';
-import 'package:core/presentation/pages/top_rated_movies_page.dart';
+import 'package:core/presentation/pages/movie/top_rated_movies_page.dart';
 import 'package:core/utils/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -31,6 +32,12 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     FirebaseCrashlytics.instance.crash();
+      //   },
+      //   child: Icon(Icons.error),
+      // ),
       appBar: AppBar(
         leading: const Icon(Icons.menu),
         title: const Text('Ditonton'),

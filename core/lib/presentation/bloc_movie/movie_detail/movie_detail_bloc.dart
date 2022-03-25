@@ -3,8 +3,8 @@ import 'package:core/domain/usecases/get_movie_recommendations.dart';
 import 'package:core/domain/usecases/get_watchlist_status.dart';
 import 'package:core/domain/usecases/remove_watchlist.dart';
 import 'package:core/domain/usecases/save_watchlist.dart';
-import 'package:core/presentation/bloc_movie/detail_event.dart';
-import 'package:core/presentation/bloc_movie/detail_state.dart';
+import 'package:core/presentation/bloc_movie/movie_detail/detail_event.dart';
+import 'package:core/presentation/bloc_movie/movie_detail/detail_state.dart';
 import 'package:core/utils/state_enum.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
