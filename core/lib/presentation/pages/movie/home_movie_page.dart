@@ -32,12 +32,12 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     FirebaseCrashlytics.instance.crash();
-      //   },
-      //   child: Icon(Icons.error),
-      // ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          FirebaseCrashlytics.instance.crash();
+        },
+        child: Icon(Icons.error),
+      ),
       appBar: AppBar(
         leading: const Icon(Icons.menu),
         title: const Text('Ditonton'),
