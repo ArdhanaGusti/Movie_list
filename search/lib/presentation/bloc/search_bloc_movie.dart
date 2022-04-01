@@ -10,20 +10,20 @@ class SearchBlocMovie extends Bloc<SearchEvent, SearchState> {
     return (events, mapper) => events.debounceTime(duration).flatMap(mapper);
   }
 
-  SearchBlocMovie(this._searchMovies) : super(SearchEmpty()) {
+  SearchBlocMovie(this._searchMovies) : super(SearchMovieEmpty()) {
     on<OnQueryChanged>(
       (event, emit) async {
         final query = event.query;
 
-        emit(SearchLoading());
+        emit(SearchMovieLoading());
         final result = await _searchMovies.execute(query);
 
         result.fold(
           (failure) {
-            emit(SearchError(failure.message));
+            emit(SearchMovieError(failure.message));
           },
           (data) {
-            emit(SearchHasData(data));
+            emit(SearchMovieHasData(data));
           },
         );
       },

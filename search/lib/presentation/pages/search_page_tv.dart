@@ -36,13 +36,13 @@ class SearchPageTv extends StatelessWidget {
               'Search Result',
               style: kHeading6,
             ),
-            BlocBuilder<SearchBlocTv, SearchState>(
+            BlocBuilder<SearchBlocTv, SearchStateTv>(
               builder: (context, state) {
-                if (state is SearchLoading) {
+                if (state is SearchTvLoading) {
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state is SearchHasData) {
+                } else if (state is SearchTvHasData) {
                   final result = state.result;
                   return Expanded(
                     child: ListView.builder(
@@ -56,7 +56,11 @@ class SearchPageTv extends StatelessWidget {
                   );
                 } else {
                   return Expanded(
-                    child: Container(),
+                    child: Center(
+                        child: Text(
+                      "Pencarian tidak ditemukan",
+                      style: kHeading6,
+                    )),
                   );
                 }
               },

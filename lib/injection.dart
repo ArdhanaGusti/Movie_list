@@ -10,7 +10,8 @@ import 'package:core/presentation/bloc_tv/tv_list_bloc.dart';
 import 'package:core/presentation/bloc_tv/tv_popular_bloc.dart';
 import 'package:core/presentation/bloc_tv/tv_top_rated_bloc.dart';
 import 'package:core/presentation/bloc_tv/tv_watchlist/tv_watchlist_bloc.dart';
-import 'package:data_connection_checker/data_connection_checker.dart';
+import 'package:core/utils/ssl_pin.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:core/core.dart';
 import 'package:search/search.dart';
 import 'package:core/utils/network_info.dart';
@@ -42,65 +43,11 @@ import 'package:core/domain/usecases_tv/get_top_rated_tv.dart';
 import 'package:core/domain/usecases_tv/get_tv_detail.dart';
 import 'package:core/domain/usecases_tv/get_tv_recommendations.dart';
 import 'package:core/domain/usecases_tv/get_watchlist_tv.dart';
-import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 
 final locator = GetIt.instance;
 
 void init() {
-  // provider
-  locator.registerFactory(
-    () => MovieListNotifier(
-      getNowPlayingMovies: locator(),
-      getPopularMovies: locator(),
-      getTopRatedMovies: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => MovieDetailNotifier(
-      getMovieDetail: locator(),
-      getMovieRecommendations: locator(),
-      getWatchListStatus: locator(),
-      saveWatchlist: locator(),
-      removeWatchlist: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => WatchlistMovieNotifier(
-      getWatchlistMovies: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TvListNotifier(
-      getNowPlayingTv: locator(),
-      getPopularTv: locator(),
-      getTopRatedTv: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TvDetailNotifier(
-      getTvDetail: locator(),
-      getTvRecommendations: locator(),
-      getWatchListStatus: locator(),
-      saveWatchlist: locator(),
-      removeWatchlist: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => PopularTvNotifier(
-      locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TopRatedTvNotifier(
-      getTopRatedTv: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => WatchlistTvNotifier(
-      getWatchlistTv: locator(),
-    ),
-  );
   locator.registerFactory(
     () => SearchBlocMovie(
       locator(),
@@ -228,6 +175,6 @@ void init() {
   locator.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(locator()));
 
   // external
-  locator.registerLazySingleton(() => http.Client());
-  locator.registerLazySingleton(() => DataConnectionChecker());
+  locator.registerLazySingleton(() => HttpSSLPinning.client);
+  locator.registerLazySingleton(() => InternetConnectionChecker());
 }

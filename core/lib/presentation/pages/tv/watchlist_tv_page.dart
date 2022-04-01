@@ -28,13 +28,13 @@ class _WatchlistTvPageState extends State<WatchlistTvPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: BlocBuilder<TvBlocWatchList, WatchlistState>(
+        child: BlocBuilder<TvBlocWatchList, WatchlistStateTv>(
           builder: (context, state) {
-            if (state is WatchlistLoading) {
+            if (state is WatchlistTvLoading) {
               return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (state is WatchlistHasData) {
+            } else if (state is WatchlistTvHasData) {
               final result = state.result;
               return RefreshIndicator(
                   onRefresh: () async {
@@ -48,10 +48,10 @@ class _WatchlistTvPageState extends State<WatchlistTvPage> {
                     },
                     itemCount: result.length,
                   ));
-            } else if (state is WatchlistError) {
+            } else if (state is WatchlistTvError) {
               final result = state.message;
               return Text(result);
-            } else if (state is WatchlistEmpty) {
+            } else if (state is WatchlistTvEmpty) {
               return const Center(child: Text("Tidak ada watchlist"));
             } else {
               return const Text('Failed');

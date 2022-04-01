@@ -1,30 +1,30 @@
 import 'package:core/domain/entities/tv.dart';
 import 'package:equatable/equatable.dart';
 
-abstract class SearchState extends Equatable {
-  const SearchState();
+abstract class SearchStateTv extends Equatable {
+  const SearchStateTv();
 
   @override
   List<Object> get props => [];
 }
 
-class SearchEmpty extends SearchState {}
+class SearchTvEmpty extends SearchStateTv {}
 
-class SearchLoading extends SearchState {}
+class SearchTvLoading extends SearchStateTv {}
 
-class SearchError extends SearchState {
+class SearchTvError extends SearchStateTv {
   final String message;
 
-  const SearchError(this.message);
+  const SearchTvError(this.message);
 
   @override
   List<Object> get props => [message];
 }
 
-class SearchHasData extends SearchState {
+class SearchTvHasData extends SearchStateTv {
   final List<Tv> result;
 
-  const SearchHasData(this.result);
+  const SearchTvHasData(this.result);
 
   @override
   List<Object> get props => [result];
