@@ -126,7 +126,7 @@ void main() {
 
   group('Search Tv Shows', () {
     test('Initial state should be empty', () {
-      expect(searchTvShowBloc.state, SearchMovieEmpty());
+      expect(searchTvShowBloc.state, SearchTvEmpty());
     });
 
     blocTest<SearchBlocTv, SearchStateTv>(

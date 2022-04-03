@@ -67,18 +67,7 @@ void main() {
       (WidgetTester tester) async {
     when(() => mockPopularMoviesBloc.state).thenReturn(MovieEmpty());
 
-    final textFinder = find.text('Empty Popular Movie');
-
-    await tester.pumpWidget(_makeTestableWidget(PopularMoviesPage()));
-
-    expect(textFinder, findsOneWidget);
-  });
-
-  testWidgets('Page should display text with message when Error',
-      (WidgetTester tester) async {
-    when(() => mockPopularMoviesBloc.state).thenReturn(MovieError('Failed'));
-
-    final textFinder = find.byKey(Key('error_message'));
+    final textFinder = find.text('Data populer kosong');
 
     await tester.pumpWidget(_makeTestableWidget(PopularMoviesPage()));
 

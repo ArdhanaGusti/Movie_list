@@ -45,6 +45,8 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
             } else if (state is MovieError) {
               final result = state.message;
               return Text(result);
+            } else if (state is MovieEmpty) {
+              return const Center(child: Text("Data populer kosong"));
             } else {
               return const Text('Failed');
             }
