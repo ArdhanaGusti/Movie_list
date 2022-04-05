@@ -44,7 +44,12 @@ class _PopularTvPageState extends State<PopularTvPage> {
               );
             } else if (state is TvError) {
               final result = state.message;
-              return Text(result);
+              return Text(
+                result,
+                key: Key('error_message'),
+              );
+            } else if (state is TvEmpty) {
+              return Text('Tv series kosong');
             } else {
               return const Text('Failed');
             }

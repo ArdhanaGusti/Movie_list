@@ -17,7 +17,7 @@ import '../../bloc_tv/tv_detail/detail_event.dart';
 import '../../bloc_tv/tv_detail/detail_state.dart';
 
 class TvDetailPage extends StatefulWidget {
-  static const ROUTE_NAME = '/detail_tv';
+  static const routeName = '/detail_tv';
 
   final int id;
   TvDetailPage({required this.id});
@@ -238,7 +238,7 @@ class _DetailContentState extends State<DetailContentTv> {
                                       onTap: () {
                                         Navigator.pushReplacementNamed(
                                           context,
-                                          TvDetailPage.ROUTE_NAME,
+                                          TvDetailPage.routeName,
                                           arguments: movie.id,
                                         );
                                       },

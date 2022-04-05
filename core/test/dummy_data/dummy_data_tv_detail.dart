@@ -1,0 +1,43 @@
+import 'package:core/data/models/tv_detail_model.dart';
+import 'package:core/domain/entities/tv_detail.dart';
+
+final testTvShowDetail = TvDetail(
+    backdropPath: 'backdropPath',
+    firstAirDate: '2021-10-31',
+    genres: [Genre(id: 1, name: 'Action')],
+    id: 1,
+    name: 'name',
+    originalName: 'originalName',
+    overview: 'overview',
+    posterPath: 'posterPath',
+    seasons: [
+      Season(
+        episodeCount: 1,
+        id: 1,
+        name: 'name',
+        overview: 'overview',
+        posterPath: 'posterPath',
+        seasonNumber: 1,
+      ),
+    ],
+    tagline: 'tagline',
+    voteAverage: 5.0,
+    voteCount: 1,
+    adult: false,
+    createdBy: [],
+    episodeRunTime: [],
+    homepage: '',
+    inProduction: false,
+    languages: [],
+    lastAirDate: "lastAirDate",
+    networks: [],
+    numberOfEpisodes: 1,
+    numberOfSeasons: 1,
+    originalLanguage: '',
+    originCountry: [],
+    popularity: 1.0,
+    productionCompanies: [],
+    productionCountries: [],
+    spokenLanguages: [],
+    status: '',
+    type: '');

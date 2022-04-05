@@ -1,10 +1,10 @@
 import 'package:core/data/models/movie_table.dart';
+// import 'package:core/data/models/tv_detail_model.dart';
 import 'package:core/data/models/tv_table.dart';
 import 'package:core/domain/entities/genre.dart';
 import 'package:core/domain/entities/movie.dart';
 import 'package:core/domain/entities/movie_detail.dart';
 import 'package:core/domain/entities/tv.dart';
-import 'package:core/domain/entities/tv_detail.dart';
 
 final testMovie = Movie(
   adult: false,
@@ -53,30 +53,6 @@ final testMovieDetail = MovieDetail(
   voteAverage: 1,
   voteCount: 1,
 );
-
-// final testTvShowDetail = TvDetail(
-//   backdropPath: 'backdropPath',
-//   genres: [
-//   ],
-//   id: 1,
-//   name: 'name',
-//   originalName: 'originalName',
-//   overview: 'overview',
-//   posterPath: 'posterPath',
-//   seasons: [
-//     Season(
-//       episodeCount: 1,
-//       id: 1,
-//       name: 'name',
-//       overview: 'overview',
-//       posterPath: 'posterPath',
-//       seasonNumber: 1,
-//     ),
-//   ],
-//   tagline: 'tagline',
-//   voteAverage: 5.0,
-//   voteCount: 1
-// );
 
 final testMovieCache = MovieTable(
   id: 557,

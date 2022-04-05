@@ -20,7 +20,7 @@ class TvDetailResponse {
     required this.inProduction,
     required this.languages,
     required this.lastAirDate,
-    required this.lastEpisodeToAir,
+    // required this.lastEpisodeToAir,
     required this.name,
     // required this.nextEpisodeToAir,
     required this.networks,
@@ -47,14 +47,14 @@ class TvDetailResponse {
   final String? backdropPath;
   final List<CreatedBy> createdBy;
   final List<int> episodeRunTime;
-  final DateTime firstAirDate;
+  final String firstAirDate;
   final List<Genre> genres;
   final String homepage;
   final int id;
   final bool inProduction;
   final List<String> languages;
-  final DateTime lastAirDate;
-  final TEpisodeToAir lastEpisodeToAir;
+  final String lastAirDate;
+  // final TEpisodeToAir lastEpisodeToAir;
   final String name;
   // final TEpisodeToAir? nextEpisodeToAir;
   final List<Network> networks;
@@ -83,14 +83,14 @@ class TvDetailResponse {
         createdBy: List<CreatedBy>.from(
             json["created_by"].map((x) => CreatedBy.fromJson(x))),
         episodeRunTime: List<int>.from(json["episode_run_time"].map((x) => x)),
-        firstAirDate: DateTime.parse(json["first_air_date"]),
+        firstAirDate: json["first_air_date"],
         genres: List<Genre>.from(json["genres"].map((x) => Genre.fromJson(x))),
         homepage: json["homepage"],
         id: json["id"],
         inProduction: json["in_production"],
         languages: List<String>.from(json["languages"].map((x) => x)),
-        lastAirDate: DateTime.parse(json["last_air_date"]),
-        lastEpisodeToAir: TEpisodeToAir.fromJson(json["last_episode_to_air"]),
+        lastAirDate: json["last_air_date"],
+        // lastEpisodeToAir: TEpisodeToAir.fromJson(json["last_episode_to_air"]),
         name: json["name"],
         // nextEpisodeToAir: TEpisodeToAir.fromJson(json["next_episode_to_air"]),
         networks: List<Network>.from(
@@ -123,16 +123,14 @@ class TvDetailResponse {
         "backdrop_path": backdropPath,
         "created_by": List<dynamic>.from(createdBy.map((x) => x.toJson())),
         "episode_run_time": List<dynamic>.from(episodeRunTime.map((x) => x)),
-        "first_air_date":
-            "${firstAirDate.year.toString().padLeft(4, '0')}-${firstAirDate.month.toString().padLeft(2, '0')}-${firstAirDate.day.toString().padLeft(2, '0')}",
+        "first_air_date": firstAirDate,
         "genres": List<dynamic>.from(genres.map((x) => x.toJson())),
         "homepage": homepage,
         "id": id,
         "in_production": inProduction,
         "languages": List<dynamic>.from(languages.map((x) => x)),
-        "last_air_date":
-            "${lastAirDate.year.toString().padLeft(4, '0')}-${lastAirDate.month.toString().padLeft(2, '0')}-${lastAirDate.day.toString().padLeft(2, '0')}",
-        "last_episode_to_air": lastEpisodeToAir.toJson(),
+        "last_air_date": lastAirDate,
+        // "last_episode_to_air": lastEpisodeToAir.toJson(),
         "name": name,
         // "next_episode_to_air": nextEpisodeToAir.toJson(),
         "networks": List<dynamic>.from(networks.map((x) => x.toJson())),
@@ -164,14 +162,11 @@ class TvDetailResponse {
       backdropPath: backdropPath,
       createdBy: createdBy,
       episodeRunTime: episodeRunTime,
-      firstAirDate: firstAirDate,
       genres: genres,
       homepage: homepage,
       id: id,
       inProduction: inProduction,
       languages: languages,
-      lastAirDate: lastAirDate,
-      lastEpisodeToAir: lastEpisodeToAir,
       name: name,
       // nextEpisodeToAir: this.nextEpisodeToAir,
       networks: networks,
@@ -191,7 +186,7 @@ class TvDetailResponse {
       tagline: tagline,
       type: type,
       voteAverage: voteAverage,
-      voteCount: voteCount,
+      voteCount: voteCount, firstAirDate: '', lastAirDate: '',
     );
   }
 
@@ -208,7 +203,7 @@ class TvDetailResponse {
         inProduction,
         languages,
         lastAirDate,
-        lastEpisodeToAir,
+        // lastEpisodeToAir,
         name,
         // nextEpisodeToAir,
         networks,

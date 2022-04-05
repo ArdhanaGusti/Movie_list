@@ -1,6 +1,7 @@
 import 'package:core/presentation/bloc_tv/tv_watchlist/tv_watchlist_bloc.dart';
 import 'package:core/presentation/bloc_tv/tv_watchlist/watchlist_event.dart';
 import 'package:core/presentation/widgets/tv_card_list.dart';
+import 'package:core/utils/route_observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,10 +14,20 @@ class WatchlistTvPage extends StatefulWidget {
   _WatchlistTvPageState createState() => _WatchlistTvPageState();
 }
 
-class _WatchlistTvPageState extends State<WatchlistTvPage> {
+class _WatchlistTvPageState extends State<WatchlistTvPage> with RouteAware {
   @override
   void initState() {
     super.initState();
+    context.read<TvBlocWatchList>().add(WatchlistTv());
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    routeObserver.subscribe(this, ModalRoute.of(context)!);
+  }
+
+  void didPopNext() {
     context.read<TvBlocWatchList>().add(WatchlistTv());
   }
 
@@ -60,5 +71,11 @@ class _WatchlistTvPageState extends State<WatchlistTvPage> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    routeObserver.unsubscribe(this);
+    super.dispose();
   }
 }

@@ -52,8 +52,8 @@ class TvModel {
   List<int> genreIds;
   int id;
   String name;
-  List<String> originCountry;
-  String originalLanguage;
+  List<String>? originCountry;
+  String? originalLanguage;
   String originalName;
   String overview;
   double popularity;
@@ -84,7 +84,7 @@ class TvModel {
         "genre_ids": List<dynamic>.from(genreIds.map((x) => x)),
         "id": id,
         "name": name,
-        "origin_country": List<dynamic>.from(originCountry.map((x) => x)),
+        "origin_country": List<dynamic>.from(originCountry!.map((x) => x)),
         "original_language": originalLanguage,
         "original_name": originalName,
         "overview": overview,

@@ -44,7 +44,12 @@ class _TopRatedTvPageState extends State<TopRatedTvPage> {
               );
             } else if (state is TvError) {
               final result = state.message;
-              return Text(result);
+              return Text(
+                result,
+                key: Key('error_message'),
+              );
+            } else if (state is TvEmpty) {
+              return Text("Empty Top Rated Tv Show");
             } else {
               return const Text('Failed');
             }
