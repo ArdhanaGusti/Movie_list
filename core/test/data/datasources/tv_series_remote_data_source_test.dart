@@ -22,9 +22,9 @@ void main() {
   });
 
   group('get Now Playing Tv Shows', () {
-    final tTvShowList =
-        Welcome.fromJson(json.decode(readJson('dummy_data/_airing_today.json')))
-            .results;
+    final tTvShowList = Welcome.fromJson(
+            json.decode(readJson('dummy_data/tv_now_playing_today.json')))
+        .results;
 
     test(
         'should throw a ServerException when the response code is 404 or other',
@@ -41,7 +41,7 @@ void main() {
 
   group('get Popular Tv Shows', () {
     final tTvShowList =
-        Welcome.fromJson(json.decode(readJson('dummy_data/_popular.json')))
+        Welcome.fromJson(json.decode(readJson('dummy_data/tv_popular.json')))
             .results;
 
     test(
@@ -59,7 +59,7 @@ void main() {
 
   group('get Top Rated Tv Shows', () {
     final tTvShowList =
-        Welcome.fromJson(json.decode(readJson('dummy_data/_top_rated.json')))
+        Welcome.fromJson(json.decode(readJson('dummy_data/tv_top_rated.json')))
             .results;
 
     test('should throw ServerException when response code is other than 200',
@@ -76,7 +76,7 @@ void main() {
 
   group('get Tv Show recommendations', () {
     final tTvShowList = Welcome.fromJson(
-            json.decode(readJson('dummy_data/_recommendations.json')))
+            json.decode(readJson('dummy_data/tv_recommendations.json')))
         .results;
     final tId = 93405;
 
@@ -95,7 +95,7 @@ void main() {
 
   group('search Tv Shows', () {
     final tSearchResult =
-        Welcome.fromJson(json.decode(readJson('dummy_data/_search.json')))
+        Welcome.fromJson(json.decode(readJson('dummy_data/tv_search.json')))
             .results;
     final tQuery = 'Game of Thrones';
 
