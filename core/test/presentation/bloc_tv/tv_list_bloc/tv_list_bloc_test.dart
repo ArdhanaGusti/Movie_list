@@ -14,7 +14,7 @@ import 'package:core/domain/usecases_tv/get_popular_tv.dart';
 import 'package:core/domain/usecases_tv/get_top_rated_tv.dart';
 import 'package:core/presentation/bloc_tv/tv_list_bloc.dart';
 
-import 'tv_show_list_bloc_test.mocks.dart';
+import 'tv_list_bloc_test.mocks.dart';
 
 @GenerateMocks([GetNowPlayingTv, GetPopularTv, GetTopRatedTv])
 void main() {

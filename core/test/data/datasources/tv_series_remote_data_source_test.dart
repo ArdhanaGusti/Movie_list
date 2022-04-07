@@ -22,9 +22,9 @@ void main() {
   });
 
   group('get Now Playing Tv Shows', () {
-    final tTvShowList = Welcome.fromJson(
-            json.decode(readJson('dummy_data/tv_show_airing_today.json')))
-        .results;
+    final tTvShowList =
+        Welcome.fromJson(json.decode(readJson('dummy_data/_airing_today.json')))
+            .results;
 
     test(
         'should throw a ServerException when the response code is 404 or other',
@@ -40,9 +40,9 @@ void main() {
   });
 
   group('get Popular Tv Shows', () {
-    final tTvShowList = Welcome.fromJson(
-            json.decode(readJson('dummy_data/tv_show_popular.json')))
-        .results;
+    final tTvShowList =
+        Welcome.fromJson(json.decode(readJson('dummy_data/_popular.json')))
+            .results;
 
     test(
         'should throw a ServerException when the response code is 404 or other',
@@ -58,9 +58,9 @@ void main() {
   });
 
   group('get Top Rated Tv Shows', () {
-    final tTvShowList = Welcome.fromJson(
-            json.decode(readJson('dummy_data/tv_show_top_rated.json')))
-        .results;
+    final tTvShowList =
+        Welcome.fromJson(json.decode(readJson('dummy_data/_top_rated.json')))
+            .results;
 
     test('should throw ServerException when response code is other than 200',
         () async {
@@ -76,7 +76,7 @@ void main() {
 
   group('get Tv Show recommendations', () {
     final tTvShowList = Welcome.fromJson(
-            json.decode(readJson('dummy_data/tv_show_recommendations.json')))
+            json.decode(readJson('dummy_data/_recommendations.json')))
         .results;
     final tId = 93405;
 
@@ -94,9 +94,9 @@ void main() {
   });
 
   group('search Tv Shows', () {
-    final tSearchResult = Welcome.fromJson(
-            json.decode(readJson('dummy_data/tv_show_search.json')))
-        .results;
+    final tSearchResult =
+        Welcome.fromJson(json.decode(readJson('dummy_data/_search.json')))
+            .results;
     final tQuery = 'Game of Thrones';
 
     test('should throw ServerException when response code is other than 200',

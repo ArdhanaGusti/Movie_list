@@ -17,7 +17,7 @@ import 'package:core/domain/usecases_tv/get_watchlist_status.dart';
 import 'package:core/domain/usecases_tv/remove_watchlist.dart';
 import 'package:core/domain/usecases_tv/save_watchlist.dart';
 
-import 'tv_show_detail_bloc_test.mocks.dart';
+import 'tv_detail_bloc_test.mocks.dart';
 
 @GenerateMocks([
   GetTvDetail,

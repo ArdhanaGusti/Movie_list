@@ -99,11 +99,11 @@ void init() {
   );
   locator.registerFactory(
     () => TvBlocDetail(
-      locator(),
-      locator(),
-      locator(),
-      locator(),
-      locator(),
+      getTvDetail: locator(),
+      getTvRecommendations: locator(),
+      getWatchListStatus: locator(),
+      removeWatchlist: locator(),
+      saveWatchlist: locator(),
     ),
   );
   locator.registerFactory(

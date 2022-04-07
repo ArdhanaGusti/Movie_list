@@ -10,7 +10,7 @@ import 'package:mockito/mockito.dart';
 import 'package:core/domain/usecases_tv/get_top_rated_tv.dart';
 import 'package:core/presentation/bloc_tv/tv_top_rated_bloc.dart';
 
-import 'top_rated_tv_shows_bloc_test.mocks.dart';
+import 'top_rated_tv_bloc_test.mocks.dart';
 
 @GenerateMocks([GetTopRatedTv])
 void main() {

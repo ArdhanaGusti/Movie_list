@@ -10,7 +10,7 @@ import 'package:mockito/mockito.dart';
 import 'package:core/domain/usecases_tv/get_popular_tv.dart';
 import 'package:core/presentation/bloc_tv/tv_popular_bloc.dart';
 
-import 'popular_tv_shows_bloc_test.mocks.dart';
+import 'popular_tv_bloc_test.mocks.dart';
 
 @GenerateMocks([GetPopularTv])
 void main() {
