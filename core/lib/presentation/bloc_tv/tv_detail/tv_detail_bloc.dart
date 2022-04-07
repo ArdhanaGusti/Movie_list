@@ -9,25 +9,29 @@ import 'package:core/utils/state_enum.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TvBlocDetail extends Bloc<DetailEvent, DetailState> {
-  final GetTvDetail _getTvDetail;
-  final GetTvRecommendations _getTvRecommendations;
-  final GetWatchListStatusTv _getWatchListStatus;
-  final SaveWatchlistTv _saveWatchlist;
-  final RemoveWatchlistTv _removeWatchlist;
+  final GetTvDetail getTvDetail;
+  final GetTvRecommendations getTvRecommendations;
+  final GetWatchListStatusTv getWatchListStatus;
+  final SaveWatchlistTv saveWatchlist;
+  final RemoveWatchlistTv removeWatchlist;
 
   static const watchlistAddSuccessMessage = 'Added to Watchlist';
   static const watchlistRemoveSuccessMessage = 'Removed from Watchlist';
 
-  TvBlocDetail(this._getTvDetail, this._getTvRecommendations,
-      this._getWatchListStatus, this._saveWatchlist, this._removeWatchlist)
+  TvBlocDetail(
+      {required this.getTvDetail,
+      required this.getTvRecommendations,
+      required this.getWatchListStatus,
+      required this.saveWatchlist,
+      required this.removeWatchlist})
       : super(DetailState.initial()) {
     on<OnDetailList>(
       (event, emit) async {
         emit(state.copyWith(
           tvDetailState: RequestState.Loading,
         ));
-        final result = await _getTvDetail.execute(event.id);
-        final recomendation = await _getTvRecommendations.execute(event.id);
+        final result = await getTvDetail.execute(event.id);
+        final recomendation = await getTvRecommendations.execute(event.id);
 
         result.fold(
           (failure) {
@@ -61,7 +65,7 @@ class TvBlocDetail extends Bloc<DetailEvent, DetailState> {
     );
     on<AddWatchlist>(
       (event, emit) async {
-        final result = await _saveWatchlist.execute(event.movieDetail);
+        final result = await saveWatchlist.execute(event.movieDetail);
 
         result.fold(
           (failure) {
@@ -79,7 +83,7 @@ class TvBlocDetail extends Bloc<DetailEvent, DetailState> {
     );
     on<EraseWatchlist>(
       (event, emit) async {
-        final result = await _removeWatchlist.execute(event.movieDetail);
+        final result = await removeWatchlist.execute(event.movieDetail);
         result.fold(
           (failure) {
             emit(state.copyWith(watchlistMessage: failure.message));
@@ -95,7 +99,7 @@ class TvBlocDetail extends Bloc<DetailEvent, DetailState> {
     );
     on<WatchlistStatus>(
       (event, emit) async {
-        final result = await _getWatchListStatus.execute(event.id);
+        final result = await getWatchListStatus.execute(event.id);
         emit(state.copyWith(isAddedToWatchlist: result));
       },
     );
