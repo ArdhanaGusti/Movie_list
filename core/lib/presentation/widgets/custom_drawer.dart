@@ -1,5 +1,6 @@
 import 'package:core/presentation/pages/tv/tv_series_page.dart';
 import 'package:core/presentation/pages/movie/watchlist_movies_page.dart';
+import 'package:core/presentation/pages/tv/watchlist_tv_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatefulWidget {
@@ -51,10 +52,17 @@ class _CustomDrawerState extends State<CustomDrawer>
         ),
         ListTile(
           leading: const Icon(Icons.save_alt),
-          title: const Text('Watchlist'),
+          title: const Text('Watchlist Movie'),
           onTap: () {
             Navigator.pushNamed(context, WatchlistMoviesPage.ROUTE_NAME);
             _animationController.reverse();
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.save_alt),
+          title: Text('Watchlist Tv'),
+          onTap: () {
+            Navigator.pushNamed(context, WatchlistTvPage.ROUTE_NAME);
           },
         ),
         ListTile(

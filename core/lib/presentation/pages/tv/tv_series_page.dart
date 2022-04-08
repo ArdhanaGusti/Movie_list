@@ -4,6 +4,7 @@ import 'package:core/presentation/bloc_tv/tv_list_bloc.dart';
 import 'package:core/presentation/bloc_tv/tv_popular_bloc.dart';
 import 'package:core/presentation/bloc_tv/tv_state.dart';
 import 'package:core/presentation/bloc_tv/tv_top_rated_bloc.dart';
+import 'package:core/presentation/pages/movie/watchlist_movies_page.dart';
 import 'package:core/styles/text_styles.dart';
 import 'package:core/utils/constant.dart';
 import 'package:core/domain/entities/tv.dart';
@@ -60,7 +61,14 @@ class _TvSeriesPageState extends State<TvSeriesPage> {
             ),
             ListTile(
               leading: Icon(Icons.save_alt),
-              title: Text('Watchlist'),
+              title: Text('Watchlist Movie'),
+              onTap: () {
+                Navigator.pushNamed(context, WatchlistMoviesPage.ROUTE_NAME);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.save_alt),
+              title: Text('Watchlist Tv'),
               onTap: () {
                 Navigator.pushNamed(context, WatchlistTvPage.ROUTE_NAME);
               },
